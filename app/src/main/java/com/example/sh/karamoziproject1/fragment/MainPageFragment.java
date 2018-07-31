@@ -2,6 +2,7 @@ package com.example.sh.karamoziproject1.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -21,14 +22,18 @@ public class MainPageFragment extends Fragment {
     final static String KEY_MAINPAGE_TO_INFO_USER = "user";
     private EditText etFirstName, etLastName, etEmail;
     private ImageView ivLogo;
-    private Button btnEnter;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main_page, container, false);
-        initViews(rootView);
-        return rootView;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_main_page, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initViews(view);
+        loadImage();
     }
 
     private void initViews(View view) {
@@ -36,8 +41,7 @@ public class MainPageFragment extends Fragment {
         etLastName = view.findViewById(R.id.fragment_main_page_et_last_name);
         etEmail = view.findViewById(R.id.fragment_main_page_et_email);
         ivLogo = view.findViewById(R.id.fragment_main_page_iv_logo);
-        btnEnter = view.findViewById(R.id.fragment_main_page_btn_enter);
-        loadImage();
+        Button btnEnter = view.findViewById(R.id.fragment_main_page_btn_enter);
         btnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +63,8 @@ public class MainPageFragment extends Fragment {
     }
 
     private boolean inputsIsValid() {
-        if (!etFirstName.getText().toString().isEmpty() &&
+        return !etFirstName.getText().toString().isEmpty() &&
                 !etLastName.getText().toString().isEmpty() &&
-                !etEmail.getText().toString().isEmpty()) {
-            return true;
-        }
-        return false;
+                !etEmail.getText().toString().isEmpty();
     }
 }

@@ -12,4 +12,9 @@
     <string name="email">ایمیل</string>
     <string name="enter">ورود</string>
     <string name="cancle">انصراف</string>
+    <string name="about1">سینا الماسی</string>
+    <string name="about2">کاراموز دوره اندروید</string>
+    <string name="about3">شرکت یارا</string>
+    <string name="myGmail">gmail : salmasi2016@gmail.com</string>
+    <string name="myGit">git : https://github.com/salmasi2016/karamoziProject1</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.sh.karamoziproject1.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,7 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.sh.karamoziproject1.R;
+import com.example.sh.karamoziproject1.fragment.AboutFragment;
 import com.example.sh.karamoziproject1.fragment.CategoriesFragment;
+import com.example.sh.karamoziproject1.fragment.ContactFragment;
 import com.example.sh.karamoziproject1.fragment.MainPageFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,17 +38,17 @@ public class MainActivity extends AppCompatActivity {
     private void setValueDrawerLayout() {
         drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
 
             }
 
             @Override
-            public void onDrawerOpened(View drawerView) {
+            public void onDrawerOpened(@NonNull View drawerView) {
 
             }
 
             @Override
-            public void onDrawerClosed(View drawerView) {
+            public void onDrawerClosed(@NonNull View drawerView) {
 
             }
 
@@ -79,17 +82,30 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    public boolean onClickMainMenu(MenuItem item) {
-        if (drawerLayout.isDrawerOpen(Gravity.RIGHT))
-            drawerLayout.closeDrawer(Gravity.RIGHT);
+    public void onClickMainMenu(MenuItem item) {
+        if (drawerLayout.isDrawerOpen(Gravity.END))
+            drawerLayout.closeDrawer(Gravity.END);
         else
-            drawerLayout.openDrawer(Gravity.RIGHT);
-        return true;
+            drawerLayout.openDrawer(Gravity.END);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void onClickMainNavigation(View view) {
+        drawerLayout.closeDrawer(Gravity.END);
+        switch (view.getId()){
+            case R.id.main_navigation_tv_about:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_main_layout, new AboutFragment()).commit();
+                break;
+            case R.id.main_navigation_tv_contact:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_main_layout, new ContactFragment()).commit();
+                break;
+        }
     }
 }

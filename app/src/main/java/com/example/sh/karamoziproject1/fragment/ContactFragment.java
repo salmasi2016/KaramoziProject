@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.sh.karamoziproject1.R;
 
-public class CategoriesFragment extends Fragment {
+public class ContactFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_categories, container, false);
+        return inflater.inflate(R.layout.fragment_contact, container, false);
     }
 }

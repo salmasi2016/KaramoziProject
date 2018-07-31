@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toBottomOf="@id/fragment_main_page_gl_y3"
         app:layout_constraintLeft_toLeftOf="@id/fragment_main_page_gl_x15"
         app:layout_constraintRight_toRightOf="@id/fragment_main_page_gl_x85"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/fragment_main_page_et_first_name"
@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textSize="@dimen/textSize2"
         app:layout_constraintBottom_toBottomOf="@id/fragment_main_page_gl_y5"
         app:layout_constraintLeft_toLeftOf="@id/fragment_main_page_gl_x15"
