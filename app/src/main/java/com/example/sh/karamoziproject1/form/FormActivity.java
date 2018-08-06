@@ -1,4 +1,4 @@
-package com.example.sh.karamoziproject1.Form;
+package com.example.sh.karamoziproject1.form;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

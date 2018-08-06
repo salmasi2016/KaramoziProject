@@ -15,7 +15,10 @@
 
         </activity>
         <activity android:name=".activity.InfoActivity" />
-        <activity android:name=".Form.FormActivity" >
+        <activity android:name=".form.FormActivity" >
+
+        </activity>
+        <activity android:name=".retrofit.RetrofitActivity" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 

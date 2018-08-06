@@ -1,4 +1,4 @@
-package com.example.sh.karamoziproject1.Form;
+package com.example.sh.karamoziproject1.form;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 import com.example.sh.karamoziproject1.R;
 
-public class NameFragment extends Fragment {
+public class FamilyFragment extends Fragment {
     private Interaction interaction;
 
     @Override
@@ -26,14 +26,14 @@ public class NameFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_name, container, false);
+        return inflater.inflate(R.layout.fragment_family, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final EditText etName = view.findViewById(R.id.fragment_name_et_name);
-        etName.addTextChangedListener(new TextWatcher() {
+        EditText etFamily=view.findViewById(R.id.fragment_family_et_family);
+        etFamily.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -41,7 +41,7 @@ public class NameFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                interaction.onSetText(Tool.KEY_FRAGMENT_TYPE_NAME, etName.getText().toString());
+                interaction.onSetText(Tool.KEY_FRAGMENT_TYPE_FAMILY,charSequence.toString());
             }
 
             @Override

@@ -18,4 +18,5 @@
     <string name="myGmail">gmail : salmasi2016@gmail.com</string>
     <string name="myGit">git : https://github.com/salmasi2016/karamoziProject1</string>
     <string name="submit">اضافه کردن</string>
+    <string name="str_users">کاربران</string>
 </resources>

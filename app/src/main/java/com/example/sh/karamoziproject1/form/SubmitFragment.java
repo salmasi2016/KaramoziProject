@@ -1,4 +1,4 @@
-package com.example.sh.karamoziproject1.Form;
+package com.example.sh.karamoziproject1.form;
 
 import android.content.Context;
 import android.os.Bundle;
